@@ -1,3 +1,10 @@
+The purpose of this program is to allow users to check if they can watch a specific TV show based on the shows they are currently watching. The program reads information from two files, TVGuide.txt containing information about various TV shows, and Interests.txt which contains information about the shows a user is interested in. The program then determines if the user can watch a specific show based on the options below:
+
+User can watch show X as they are not watching anything else during that time.
+User can’t watch show X as they are not finished with a show they are watching.
+User can’t watch show X as they will begin another show at the same time.
+The program assumes that every show will be a minimum of half an hour long and a maximum of one hour long. It also assumes that the shows will be listed in a sorted manner based on their start time. Interests.txt will contain a word “Watching” on the first line, followed by the showID of the shows the user is currently watching. Another word “Wishlist” after the above information followed by the respective showIDs. TVGuide.txt will contain showID along with show name (one word separated by _). The next two lines will have S and E indicating start time and end time respectively for this show. This set of information is repeated for all the available shows.
+
 # Requirements
 1. Java SE Development Kit 8 or higher
 2. Eclipse IDE or any other Java IDE
@@ -9,7 +16,27 @@
 3. Build the project.
 4. Run the TVGuide.java file to start the program.
 
-# Usage
+# Program Design
+# Watchable interface
+The Watchable interface has a method isOnSameTime(Show S) where S is an object of type TVShow.
+
+# TVShow class
+The TVShow class has the following attributes:
+
+* showID (String type)
+* showName (String type)
+* startTime (double type)
+* endTime (double type)
+
+It is assumed that the show name is always recorded as a single word (_ is used to combine multiple words). It is also assumed that no two TV shows can have the exact same showID.
+
+# Running the program
+
+1. Open a terminal or command prompt.
+2. Navigate to the directory containing the TVGuide.jar file.
+3. Run the following command: java -jar TVGuide.jar
+4. Follow the on-screen instructions.
+
 When you run the TVGuide.java file, you will see a menu with the following options:
 
 1. Add a TV show
