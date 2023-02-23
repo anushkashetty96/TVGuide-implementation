@@ -30,6 +30,15 @@ The TVShow class has the following attributes:
 
 It is assumed that the show name is always recorded as a single word (_ is used to combine multiple words). It is also assumed that no two TV shows can have the exact same showID.
 
+The class has the following methods:
+
+* Parameterized constructor that accepts four values and initializes showID, showName, startTime, and endTime to these passed values.
+* Copy constructor, which takes in two parameters, a show object and a String value. The newly created object will be assigned all the attributes of the passed object, with the exception of the showID. showID is assigned the value passed as the second parameter to the constructor. It is always assumed that this value will correspond to the unique showID rule.
+* clone() method. This method will prompt the user to enter a new showID, then creates and returns a clone of the calling object with the exception of the showID, which is assigned the value entered by the user.
+* toString() method, which returns a string representation of the object.
+* equals() method, which checks if two shows are equal. Two shows are equal if they have the same attributes, with the exception of the showID, which could be different.
+* isOnSameTime(Show S) method, which takes in another TVShow object S and should return “Same time”, “Different time”, or “Some Overlap” depending on the times of two TVShow objects.
+
 # Running the program
 
 1. Open a terminal or command prompt.
